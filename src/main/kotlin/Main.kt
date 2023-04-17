@@ -2,6 +2,7 @@
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.jsoup.select.Elements
 
 
 fun getWebData (inpurl: String) {
@@ -17,11 +18,26 @@ fun getWebData (inpurl: String) {
     cookies["WebInaCartRecipes"] = ""
 
     var doc: Document = Jsoup.connect(url).cookies(cookies).get()
-    println(doc)
+//    println(doc)
+    var table: Elements = doc.select("table[width=100%][cellspacing=1][cellpadding=0][border=0]")
+
+    var breakfast = table[0]
+    var lunch = table[1]
+    var dinner = table[2]
+    var latenight = table[3]
+
+    var rows: Elements = breakfast.select("tr")
+
+    for (i in rows) {
+
+    }
+
+    println(rows)
+
+
 }
 
 fun main() {
-    val BASE_URL="https://nutrition.sa.ucsc.edu/shortmenu.aspx?sName=UC+Santa+Cruz+Dining&locationNum="
 
     var ninelewis = "40&locationName=College+Nine%2fJohn+R.+Lewis+Dining+Hall&naFlag=1"
     var cowellstev = "05&locationName=Cowell%2fStevenson+Dining+Hall&naFlag=1"
