@@ -8,10 +8,10 @@ enum class Time {
     DINNER,
     LATENIGHT
 }
-fun getWebData (inputurl: String, time: Time): MutableList<String> {
+fun getWebData (inputUrl: String, time: Time): MutableList<String> {
     val baseurl: String = "https://nutrition.sa.ucsc.edu/shortmenu.aspx?sName=UC+Santa+Cruz+Dining&locationNum="
-    var url: String = baseurl+inputurl
-    var locationCookie: String = inputurl.substring(0,2)
+    var url: String = baseurl+inputUrl
+    var locationCookie: String = inputUrl.substring(0,2)
 
     val cookies = HashMap<String, String>()
     cookies["WebInaCartDates"] = ""
@@ -25,9 +25,9 @@ fun getWebData (inputurl: String, time: Time): MutableList<String> {
     var table: Elements = doc.select("table[width=100%][cellspacing=1][cellpadding=0][border=0]")
 
 
-    val timechoice = time.ordinal
+    val timeChoice = time.ordinal
 
-    var rows: Elements = table[timechoice].select("tr")
+    var rows: Elements = table[timeChoice].select("tr")
     var trs: Elements = rows.select("tr")
 //    println("start")
 
