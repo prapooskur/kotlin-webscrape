@@ -2,7 +2,6 @@
 import Time
 import getWebData
 
-
 fun main() {
     var ninelewis = "40&locationName=College+Nine%2fJohn+R.+Lewis+Dining+Hall&naFlag=1"
     var cowellstev = "05&locationName=Cowell%2fStevenson+Dining+Hall&naFlag=1"
@@ -11,17 +10,19 @@ fun main() {
 
     var locations = arrayOf(ninelewis,cowellstev,crownmerrill,porterkresge)
 
+    var choice=locations[0]
+
     println("Breakfast")
-    getWebData(cowellstev, Time.BREAKFAST)
+    getWebData(choice, Time.BREAKFAST)
     println()
     println("Lunch")
-    getWebData(cowellstev, Time.LUNCH)
+    getWebData(choice, Time.LUNCH)
     println()
     println("Dinner")
-    getWebData(cowellstev, Time.DINNER)
+    getWebData(choice, Time.DINNER)
     println()
     println("Late Night")
-    getWebData(cowellstev, Time.LATENIGHT)
+    getWebData(choice, Time.LATENIGHT)
 
 }
 
