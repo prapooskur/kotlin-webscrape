@@ -125,7 +125,17 @@ fun main() {
 
     var locations = arrayOf(ninelewis,cowellstev,crownmerrill,porterkresge)
 
-    getWebData(ninelewis, Time.BREAKFAST)
+    println("Breakfast")
+    getWebData(cowellstev, Time.BREAKFAST)
+    println()
+    println("Lunch")
+    getWebData(cowellstev, Time.LUNCH)
+    println()
+    println("Dinner")
+    getWebData(cowellstev, Time.DINNER)
+    println()
+    println("Late Night")
+    getWebData(cowellstev, Time.LATENIGHT)
 
 }
 
