@@ -12,8 +12,27 @@ fun main() {
 
     var choice=locations[0]
 
-    println("Breakfast")
-    getWebData(choice, Time.BREAKFAST)
+//    println("Breakfast")
+    val breakfastmenu = getWebData(choice, Time.BREAKFAST)
+    for (i in breakfastmenu) {
+        println(i)
+    }
+    println()
+    val lunchmenu = getWebData(choice, Time.LUNCH)
+    for (i in lunchmenu) {
+        println(i)
+    }
+    println()
+    val dinnermenu = getWebData(choice, Time.DINNER)
+    for (i in dinnermenu) {
+        println(i)
+    }
+    println()
+    val latenightmenu = getWebData(choice, Time.LATENIGHT)
+    for (i in latenightmenu) {
+        println(i)
+    }
+    /*
     println()
     println("Lunch")
     getWebData(choice, Time.LUNCH)
@@ -23,6 +42,6 @@ fun main() {
     println()
     println("Late Night")
     getWebData(choice, Time.LATENIGHT)
-
+    */
 }
 

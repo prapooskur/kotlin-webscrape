@@ -8,7 +8,7 @@ enum class Time {
     DINNER,
     LATENIGHT
 }
-fun getWebData (inputurl: String, time: Time) {
+fun getWebData (inputurl: String, time: Time): MutableList<String> {
     val baseurl: String = "https://nutrition.sa.ucsc.edu/shortmenu.aspx?sName=UC+Santa+Cruz+Dining&locationNum="
     var url: String = baseurl+inputurl
     var locationCookie: String = inputurl.substring(0,2)
@@ -43,26 +43,22 @@ fun getWebData (inputurl: String, time: Time) {
 //            print(items)
         if (separators.length > 29 && !separators.contains("&nbsp;")) {
             var cleanSeparator = separators.substring(29, separators.length - 7)
-            println(cleanSeparator)
+            listItems.add(cleanSeparator)
+//            println(cleanSeparator)
         }
         if (items.length > 42 && items !in listItems) {
             var cleanItem = items.substring(29, items.length - 13)
             if (!listItems.contains(cleanItem)) {
 //                println("add")
-                println(cleanItem)
+//                println(cleanItem)
                 listItems.add(cleanItem)
             }
         }
     }
     //END LOOP
 
-    var flattenList = mutableListOf<String>()
-    var count = 0
-    for (i in listItems) {
-        if (i !in flattenList) {
-            flattenList.add(i)
-        }
-    }
+//    print(listItems)
+    return listItems
 
     /*
         for (i in rows) {
