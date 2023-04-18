@@ -33,7 +33,6 @@ fun getWebData (inputurl: String, time: Time): MutableList<String> {
 
 
 
-    //START UNNEST HERE
     var listItems = mutableListOf<String>()
     for (j in trs) {
 //        println(j)
@@ -59,53 +58,5 @@ fun getWebData (inputurl: String, time: Time): MutableList<String> {
 
 //    print(listItems)
     return listItems
-
-    /*
-        for (i in rows) {
-            var tr: Elements = i.select("tr")
-
-
-
-            var listItems = mutableListOf<String>()
-            for (j in tr) {
-                println(j)
-                println("asdf")
-                var separators: String = j.select("span[style=\"color: #000000\"]").toString()
-                var items: String = j.select("span[style=\"color: #585858\"]").toString()
-    //            print(items)
-                if (separators.length > 29 && !separators.contains("&nbsp;")) {
-    //                println(separators.substring(29, separators.length - 7))
-                }
-                if (items.length > 42 && items !in listItems) {
-                    var cleanItem = items.substring(29, items.length - 13)
-                    if (!listItems.contains(cleanItem)) {
-    //                    println("1")
-     //                   println(cleanItem)
-                        listItems.add(cleanItem)
-                    }
-                }
-            }
-            //END LOOP
-
-            var flattenList = mutableListOf<String>()
-            var count = 0
-            for (i in listItems) {
-                if (i !in flattenList) {
-                    flattenList.add(i)
-                }
-            }
-
-
-    //        print(listItems)
-
-
-
-        }
-
-
-     */
-
-    //println(rows)
-
 
 }
